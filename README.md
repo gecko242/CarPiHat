@@ -17,7 +17,7 @@ Currently, the HAT is not open source, although at some point in the future I ma
 -   Long pins to allow HAT stacking.
 # Pinout:
 
-![Datasheet](datasheet.png)
+![Datasheet](Datasheet.png)
 
 # Power Supply:
  The power supply features the following basic topology:
