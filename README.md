@@ -17,26 +17,12 @@ Currently, the HAT is not open source, although at some point in the future I ma
 -   Long pins to allow HAT stacking.
 # Pinout:
 
-![Datasheet](https:/imgur.com/taJb3Mu)
+![Datasheet](datasheet.png)
 
 # Power Supply:
  The power supply features the following basic topology:
  
-```mermaid
-graph LR
-A(Persistant 12V) -->G
-G --> B(High Side Switch)
-C(Switched 12V) -->F
-F(Optocoupler)
-G(Fuse + OVP)
-F-->B
-D(12 -> 5V SMPS)
-B-->D
-E(Raspberry Pi)
-D-->E
-E-- Power Supply Latch -->B
-F -- Switched Input Sensing --> E
-```
+![PSU](psu.png)
 
 This means that the Raspberry Pi is switched on with the "Switched 12V". It then latches its own power, and looks for the "Switched 12V" to be turned off. It then performs a graceful shutdown, delatching the power supply when the CPU shuts down. You can, of course, leave the Pi powered up for as long as you like, if you are relying on the raspberry pi to be powered up for other tasks.
 
