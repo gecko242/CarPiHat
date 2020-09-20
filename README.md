@@ -4,6 +4,8 @@ The CarPiHat has been designed to make interfacing your Raspberry Pi to your car
 [https://www.tindie.com/products/tjd/carpihat-raspberry-pi-car-interface-pcb/](https://www.tindie.com/products/tjd/carpihat-raspberry-pi-car-interface-pcb/)
 
 Currently, the HAT is not open source, although at some point in the future I may explore this option further. 
+
+**PLEASE NOTE:** Whilst I will do my best to support users of the CarPiHAT, I am not a software developer, and I am not able to provide custom software for your application. 
 # Features:
 -   12V - 5V buck converter to power the pi optional touchscreen, with fuse and filtering.
 -   Safe shutdown circuitry to allow the pi to control its own power, and to remove any parasitic drain when off.
@@ -33,7 +35,7 @@ This means that the Raspberry Pi is switched on with the "Switched 12V". It then
 The board features a few general purpose inputs, that can be used for things such as an ilumination sense, reverse detect or handbrake input. These are pretty standard opto-isolated inputs, and can accept between 12-18V. a HIGH input will bring the corresponding Pi GPIO pin HIGH. There is no difference between the "Reverse" or "Ilumination" input, and the "IN_1" and "IN_2" inputs, other than their names, so they can all be used interchangebly. 
 
 **GPIO Layout:**
-- Reverse: **BCM19** ??? CHANGE THIS???
+- Reverse: **BCM7**
 - Ilumination: **BCM13**
 - IN_1: **BCM14**
 - IN_2: **BCM17**
