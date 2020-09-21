@@ -51,7 +51,7 @@ The board offers 2x high side switched 12V outputs, rated at 1A per channel. The
 The CarPiHat provides a transparent CAN bus interface, presented in Linux simply as a network interface. A MCP2515 offers the SPI to CAN conversion, whilst an MCP2558 handles the bus transmission. 
 A 120 Ohm termination resistor is present between CANH and CANL.
 
-Typically, setup should be completed throught the onboard configuration EEPROM, however in the case that the interface is not showing up, or you would like to manually tweak the settings, then follow the below instructions:
+To enable the CAN bus interface, follow these instructions:
 
 Add the following to the bottom of your "/boot/config.txt"
 >dtparam=spi=on
@@ -73,7 +73,7 @@ The MCP2515 is connected using the SPI interface, and uses an 8MHz cruystal.
 # Real Time Clock:
 The board features a real time clock that can be used to keep track of the system time across reboots. a DS3231MZ is used for this, connected using the I2C bus. Since there is no battery backup on the board, the RTC is kept powered using the persistant 12V supply. The clock is supported within Raspbian, and thus no custom scripts are required. The OS simply reads the time on boot. 
 
-Typically, setup should be completed throught the onboard configuration EEPROM, however in the case that the interface is not showing up, or you would like to manually tweak the settings, then follow the below instructions:
+To enable the RTC, follow these instructions:
 
 Enable I2C Through 
 >raspi config
