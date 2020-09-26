@@ -6,6 +6,7 @@ The CarPiHat has been designed to make interfacing your Raspberry Pi to your car
 Currently, the HAT is not open source, although at some point in the future I may explore this option further. 
 
 **PLEASE NOTE:** Whilst I will do my best to support users of the CarPiHAT, I am not a software developer, and I am not able to provide custom software for your application. 
+
 # Features:
 -   12V - 5V buck converter to power the pi optional touchscreen, with fuse and filtering.
 -   Safe shutdown circuitry to allow the pi to control its own power, and to remove any parasitic drain when off.
@@ -134,3 +135,5 @@ Next, add the following to "/boot/config.txt"
 >dtoverlay=gpio-poweroff,gpiopin=25,active_low
 
 This will ensure our latch pin is held low after the Pi switches off, disabling the latch and cutting off any parasitic power draw.
+
+**DISCLAIMER:** No claims, representations or warranties, whether express or implied, are made to the safety, reliability, durability and performance of the CarPiHAT. Furthermore, our company accepts no liability whatsoever for the safety, reliability, durability and performance of the CarPiHAT.
