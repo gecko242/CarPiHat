@@ -66,6 +66,7 @@ And then add the following to "/etc/rc.local"
 >/sbin/ip link set can0 up type can bitrate 100000
 
 The MCP2515 is connected using the SPI interface, and uses an 8MHz crystal.
+
 **GPIO Layout:**
 - MOSI: **BCM10**
 - MISO: **BCM9**
