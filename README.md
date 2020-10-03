@@ -56,7 +56,9 @@ To enable the CAN bus interface, follow these instructions:
 
 Add the following to the bottom of your "/boot/config.txt"
 >dtparam=spi=on
+
 >dtoverlay=mcp2515-can0,oscillator=8000000,interrupt=23
+
 >dtoverlay=spi-bcm2835-overlay
 
 And then add the following to "/etc/rc.local"
