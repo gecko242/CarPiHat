@@ -130,7 +130,7 @@ while 1:
 Save this script to "/home/pi/carPiHat.py"
 
 Then add the following to "/etc/rc.local"
->sudo python carPiHat.py
+>sudo python /home/pi/carPiHat.py
 
 This will start the script when the Pi boots.
 
