@@ -35,6 +35,12 @@ This means that the Raspberry Pi is switched on with the "Switched 12V". It then
 # Opto-Isolated Inputs:
 The board features a few general purpose inputs, that can be used for things such as an ilumination sense, reverse detect or handbrake input. These are pretty standard opto-isolated inputs, and can accept between 12-18V. a HIGH input will bring the corresponding Pi GPIO pin HIGH. There is no difference between the "Reverse" or "Ilumination" input, and the "IN_1" and "IN_2" inputs, other than their names, so they can all be used interchangebly. 
 
+**NOTE** If you are using the SPI peripheral (including the CAN interface), it may be neccesary to redirect the CS1 pin, as it is shared with the reverse input. If you are having trouble getting the reverse input to work, consider adding the following to "/boot/config.txt"
+
+>dtoverlay=spi0-cs,cs1_pin=24
+
+This redirects the pin to BCM24, although you can use any other unused pin.
+
 **GPIO Layout:**
 - Reverse: **BCM7**
 - Ilumination: **BCM13**
