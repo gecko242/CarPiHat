@@ -18,6 +18,7 @@ Currently, the HAT is not open source, although at some point in the future I ma
 -   Broken out I2C bus.
 -   Broken out 1W for temperature sensor ect.
 -   Long pins to allow HAT stacking.
+-   5V Power Output for display ect.
 # Pinout:
 
 ![Datasheet](Datasheet.png)
@@ -28,6 +29,8 @@ Currently, the HAT is not open source, although at some point in the future I ma
 ![PSU](psu.png)
 
 This means that the Raspberry Pi is switched on with the "Switched 12V". It then latches its own power, and looks for the "Switched 12V" to be turned off. It then performs a graceful shutdown, delatching the power supply when the CPU shuts down. You can, of course, leave the Pi powered up for as long as you like, if you are relying on the raspberry pi to be powered up for other tasks.
+
+There is a spare 5V output on the board. This can be used to power a display, and has been tested with the official Raspberry Pi Touch Display. If you intend to draw more than 2A continuously (including powering the Raspberry Pi), or placing the CarPiHAT in an area that is likely to suffer from high ambient temperatures, it is strongly recomended to include a fan to cool the power supply circuitry. 
 
 **GPIO Layout:**
 - PSU Latch: **BCM25**
