@@ -8,17 +8,18 @@ Currently, the HAT is not open source, although at some point in the future I ma
 **PLEASE NOTE:** Whilst I will do my best to support users of the CarPiHAT, I am not a software developer, and I am not able to provide custom software for your application. 
 
 # Features:
--   12V - 5V buck converter to power the pi optional touchscreen, with fuse and filtering.
--   Safe shutdown circuitry to allow the pi to control its own power, and to remove any parasitic drain when off.
--   Dedicated reverse, illumination and aux inputs, all opto isolated.
--   2 opto isolated general purpose inputs. (for a total of 5 inputs)
--   2 high current, high side switched 12V outputs (@1A). (for switching relays, LED's ect)
--   1 independent CAN bus interface.
--   Real time clock to maintain system time across reboots.
--   Broken out I2C bus.
--   Broken out 1W for temperature sensor ect.
--   Long pins to allow HAT stacking.
--   5V Power Output for display ect.
+- 12V - 5V buck converter to power the pi and touchscreen, with fuse and filtering.
+- Safe shutdown circuitry to allow the pi to control its own power.
+- < 1mA current draw when switched off.
+- Dedicated reverse, illumination and aux inputs, all opto isolated.
+- 2 opto isolated general purpose inputs. (for a total of 5 inputs)
+- 2 high current, high side switched 12V outputs (@1A). (for switching relays, lights ect)
+- 1 independent CAN bus port.
+- Real time clock to maintain system time across reboots.
+- Broken out I2C bus.
+- Broken out 1W for temperature sensor ect.
+- 5V Power Output for display ect.
+
 # Pinout:
 
 ![Datasheet](Datasheet.png)
@@ -30,7 +31,9 @@ Currently, the HAT is not open source, although at some point in the future I ma
 
 This means that the Raspberry Pi is switched on with the "Switched 12V". It then latches its own power, and looks for the "Switched 12V" to be turned off. It then performs a graceful shutdown, delatching the power supply when the CPU shuts down. You can, of course, leave the Pi powered up for as long as you like, if you are relying on the raspberry pi to be powered up for other tasks.
 
-There is a spare 5V output on the board. This can be used to power a display, and has been tested with the official Raspberry Pi Touch Display. If you intend to draw more than 2A continuously (including powering the Raspberry Pi), or placing the CarPiHAT in an area that is likely to suffer from high ambient temperatures, it is strongly recomended to include a fan to cool the power supply circuitry. 
+There is a spare 5V output on the board. This can be used to power a display, and has been tested with the official Raspberry Pi Touch Display. If you intend to draw more than 2A continuously (including powering the Raspberry Pi), or placing the CarPiHAT in an area that is likely to suffer from high ambient temperatures, it is strongly recomended to include a fan to cool the power supply circuitry.
+
+On most of the later V0.3 boards, there are 2 LED's to aid with power supply fault finding. One (labled "5V",) indicates if the 5V supply to the Pi is active. The other, (labled "IGN") indicates that the switched 12V supply is active.
 
 **GPIO Layout:**
 - PSU Latch: **BCM25**
@@ -139,7 +142,7 @@ while 1:
 Save this script to "/home/pi/carPiHat.py"
 
 Then add the following to "/etc/rc.local"
->sudo python /home/pi/carPiHat.py
+>python /home/pi/carPiHat.py &
 
 This will start the script when the Pi boots.
 
@@ -148,4 +151,4 @@ Next, add the following to "/boot/config.txt"
 
 This will ensure our latch pin is held low after the Pi switches off, disabling the latch and cutting off any parasitic power draw.
 
-**DISCLAIMER:** No claims, representations or warranties, whether express or implied, are made to the safety, reliability, durability and performance of the CarPiHAT. Furthermore, our company accepts no liability whatsoever for the safety, reliability, durability and performance of the CarPiHAT.
+**DISCLAIMER:** No claims, representations or warranties, whether express or implied, are made to the safety, reliability, durability and performance of the CarPiHAT. Furthermore, Taylor-Jones Design accepts no liability whatsoever for the safety, reliability, durability and performance of the CarPiHAT.
