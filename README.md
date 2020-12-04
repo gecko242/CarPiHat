@@ -151,4 +151,4 @@ Next, add the following to "/boot/config.txt"
 
 This will ensure our latch pin is held low after the Pi switches off, disabling the latch and cutting off any parasitic power draw.
 
-**DISCLAIMER:** No claims, representations or warranties, whether express or implied, are made to the safety, reliability, durability and performance of the CarPiHAT. Furthermore, Taylor-Jones Design accepts no liability whatsoever for the safety, reliability, durability and performance of the CarPiHAT.
+**DISCLAIMER:** No claims, representations or warranties, whether express or implied, are made to the safety, reliability, durability and performance of the CarPiHAT. Furthermore, Taylor-Jones Design (TJD) accepts no liability whatsoever for the safety, reliability, durability and performance of the CarPiHAT.
