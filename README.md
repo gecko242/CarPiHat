@@ -123,7 +123,7 @@ IGN_LOW_TIME = 10 # time (s) before a shutdown is initiated after power loss
 
 GPIO.setup(IGN_PIN, GPIO.IN) # set our 12V switched pin as an input
 
-GPIO.setup(EN_POWER_PIN, GPIO.OUT) # set our latch as an output
+GPIO.setup(EN_POWER_PIN, GPIO.OUT, initial=GPIO.HIGH) # set our latch as an output
 
 GPIO.output(EN_POWER_PIN, 1) # latch our power. We are now in charge of switching power off
 
