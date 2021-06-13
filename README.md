@@ -87,9 +87,9 @@ The MCP2515 is connected using the SPI interface, and uses an 8MHz crystal.
 - INT: **BCM23**
 
 # Real Time Clock:
-The board features a real time clock that can be used to keep track of the system time across reboots. a DS3231MZ is used for this, connected using the I2C bus. Since there is no battery backup on the board, the RTC is kept powered using the persistant 12V supply. The clock is supported within Raspbian, and thus no custom scripts are required. The OS simply reads the time on boot. 
+The board features a real time clock that can be used to keep track of the system time across reboots. a DS3231MZ (V0.3), or DS1307 (V0.4) is used for this, connected using the I2C bus. Since there is no battery backup on the board, the RTC is kept powered using the persistant 12V supply. The clock is supported within Raspbian, and thus no custom scripts are required. The OS simply reads the time on boot. 
 
-To enable the RTC, follow these instructions:
+To enable the RTC, follow these instructions (These are identical for all versions of CarPiHAT):
 
 Enable I2C Through 
 >raspi config
