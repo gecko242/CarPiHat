@@ -96,7 +96,9 @@ Enable I2C Through
 
 Add the following to "/etc/rc.local"
 >echo ds1307 0x68 > /sys/class/i2c-adapter/i2c-1/new_device
+>
 >sudo hwclock -s
+>
 >date
 
 Then, add the following to "/etc/modules"
