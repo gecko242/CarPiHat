@@ -102,7 +102,7 @@ Add the following to "/etc/rc.local"
 >date
 
 Then, add the following to "/etc/modules"
->rtc-ds1307
+>dtoverlay=i2c-rtc,ds1307
 
 **GPIO Layout:**
 - SDA: **BCM2**
