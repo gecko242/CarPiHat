@@ -57,8 +57,8 @@ This redirects the pin to BCM24, although you can use any other unused pin.
 The board offers 2x high side switched 12V outputs, rated at 1A per channel. These are perfect for driving small loads such as relays, fans or LED interior lighting. A HIGH GPIO will result in a HIGH output. 
 
 **GPIO Layout:**
+- OUT_0: **BCM27**
 - OUT_1: **BCM22**
-- OUT_2: **BCM27**
 
 # CAN Bus Interface:
 The CarPiHat provides a transparent CAN bus interface, presented in Linux simply as a network interface. A MCP2515 offers the SPI to CAN conversion, whilst an MCP2558 handles the bus transmission. 
